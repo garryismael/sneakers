@@ -1,3 +1,5 @@
+import React from "react";
+
 const HeaderNav = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between h-20 px-6 bg-white">
