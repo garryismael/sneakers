@@ -17,7 +17,7 @@ const HeroSection = () => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="pt-16">
+    <section className="pt-16 pb-4">
       <div className="relative embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
