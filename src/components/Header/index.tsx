@@ -13,7 +13,7 @@ const HeaderNav = () => {
         <img src="/images/logo.svg" width={138} height={20} />
       </div>
       <div className="flex items-center gap-5 ml-auto">
-        <button className="relative" disabled={counter <= 0} onClick={() => setClose(!close)}>
+        <button className="relative" onClick={() => setClose(!close)}>
           <img src="/images/icon-cart.svg" width={22} height={20} />
           {counter > 0 && (
             <span className="absolute px-1.5 text-xs text-white rounded-full -top-3 -right-1 bg-orange">
