@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import DotButton from "@/components/DotButton";
 import { productImages } from "@/constants";
 import { useDotButton, usePrevNextButtons } from "@/hooks/carousel";
 import useEmblaCarousel from "embla-carousel-react";
+import { StoreContext } from "../../context";
 
 const HeroSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
@@ -15,6 +16,8 @@ const HeroSection = () => {
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
+
+  const {counter, increment, decrement} = useContext(StoreContext);
 
   return (
     <section className="pt-16 pb-10">
@@ -94,11 +97,11 @@ const HeroSection = () => {
           </p>
         </div>
         <div className="flex items-center justify-between px-2 py-2 mt-5 rounded-md bg-light-grayish-blue">
-          <button className="p-2">
+          <button className="p-2" onClick={decrement}>
             <img src="/images/icon-minus.svg" width={12} height={4} />
           </button>
-          <span className="text-lg font-semibold">0</span>
-          <button className="p-2">
+          <span className="text-lg font-semibold">{counter}</span>
+          <button className="p-2" onClick={increment}>
             <img src="/images/icon-plus.svg" width={12} height={4} />
           </button>
         </div>
